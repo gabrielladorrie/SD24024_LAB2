@@ -14,29 +14,26 @@ st.set_page_config(
 )
 
 
+
 # =====================================================
-# CUSTOM CSS DESIGN - VISIBILITY FIX
+# CUSTOM CSS DESIGN - FINAL TEXT VISIBILITY FIX
 # =====================================================
 
 st.markdown("""
 <style>
 
-/* Main application background */
+/* MAIN BACKGROUND */
 .stApp {
     background-color: #F4F5FA !important;
+}
+
+/* GENERAL MAIN CONTENT TEXT */
+.stApp p,
+.stApp li,
+.stApp label {
     color: #1F2937 !important;
 }
 
-/* Main content text */
-.stApp p,
-.stApp li,
-.stApp label,
-.stApp span,
-.stApp strong {
-    color: #1F2937;
-}
-
-/* All headings */
 .stApp h1,
 .stApp h2,
 .stApp h3,
@@ -46,25 +43,28 @@ st.markdown("""
     color: #252B45 !important;
 }
 
-/* Main layout */
+/* MAIN LAYOUT */
 .block-container {
     padding-top: 2rem;
     padding-bottom: 3rem;
 }
 
-/* Hero banner */
+/* HERO BANNER */
 .hero {
-    background: linear-gradient(120deg, #111827, #312E81);
+    background: linear-gradient(120deg, #111827, #312E81) !important;
     padding: 35px;
     border-radius: 18px;
-    color: white !important;
     margin-bottom: 25px;
 }
 
-.hero h1 {
+/* FORCE ALL HERO TEXT TO WHITE */
+.hero h1,
+.hero h2,
+.hero h3,
+.hero p,
+.hero strong,
+.hero span {
     color: #FFFFFF !important;
-    font-size: 38px;
-    margin-bottom: 8px;
 }
 
 .hero p {
@@ -72,14 +72,18 @@ st.markdown("""
     font-size: 16px;
 }
 
-/* Information cards */
+.hero h1 {
+    font-size: 38px;
+    margin-bottom: 8px;
+}
+
+/* INFORMATION CARDS */
 .section-card {
     background: #FFFFFF !important;
     padding: 22px;
     border-radius: 14px;
     border: 1px solid #E5E7EB;
     margin-bottom: 15px;
-    color: #1F2937 !important;
 }
 
 .section-card p,
@@ -87,7 +91,7 @@ st.markdown("""
     color: #1F2937 !important;
 }
 
-/* Metric cards */
+/* METRIC CARDS */
 .metric-card {
     background: #FFFFFF !important;
     padding: 20px;
@@ -106,13 +110,12 @@ st.markdown("""
     font-weight: 700;
 }
 
-/* Explanation boxes */
+/* EXPLANATION BOXES */
 .explanation {
     background: #EEF2FF !important;
     padding: 17px;
     border-radius: 12px;
     border-left: 4px solid #6366F1;
-    color: #312E81 !important;
     margin: 12px 0;
 }
 
@@ -121,11 +124,11 @@ st.markdown("""
     color: #312E81 !important;
 }
 
-/* Binary chromosome visualization */
+/* BINARY CHROMOSOME */
 .bit-one {
     display: inline-block;
     background: #6366F1;
-    color: white !important;
+    color: #FFFFFF !important;
     padding: 5px 7px;
     margin: 2px;
     border-radius: 5px;
@@ -142,32 +145,30 @@ st.markdown("""
     font-family: monospace;
 }
 
-/* Tables */
-.stApp table,
-.stApp th,
-.stApp td {
-    color: #1F2937 !important;
-}
-
-/* Mathematical formula */
-.stApp [data-testid="stLatex"] {
-    color: #312E81 !important;
-}
-
-/* Sidebar */
+/* SIDEBAR BACKGROUND */
 [data-testid="stSidebar"] {
     background-color: #252630 !important;
 }
 
+/* FORCE ALL SIDEBAR TEXT TO WHITE */
+[data-testid="stSidebar"] *,
 [data-testid="stSidebar"] p,
+[data-testid="stSidebar"] span,
+[data-testid="stSidebar"] strong,
+[data-testid="stSidebar"] label,
 [data-testid="stSidebar"] h1,
 [data-testid="stSidebar"] h2,
-[data-testid="stSidebar"] h3,
-[data-testid="stSidebar"] label {
+[data-testid="stSidebar"] h3 {
     color: #FFFFFF !important;
 }
 
-/* Buttons */
+/* SIDEBAR SECONDARY TEXT */
+[data-testid="stSidebar"] .stCaption,
+[data-testid="stSidebar"] small {
+    color: #BFC3D1 !important;
+}
+
+/* BUTTONS */
 .stButton > button {
     background: #4F46E5 !important;
     color: #FFFFFF !important;
@@ -182,7 +183,7 @@ st.markdown("""
     color: #FFFFFF !important;
 }
 
-/* Expanders */
+/* EXPANDERS */
 [data-testid="stExpander"] {
     background: #FFFFFF !important;
     border: 1px solid #E5E7EB;
@@ -194,13 +195,14 @@ st.markdown("""
     color: #252B45 !important;
 }
 
-/* Dataframe and metric text */
-[data-testid="stMetricLabel"],
-[data-testid="stMetricValue"] {
-    color: #252B45 !important;
+/* TABLES */
+.stApp table,
+.stApp th,
+.stApp td {
+    color: #1F2937 !important;
 }
 
-/* Footer */
+/* FOOTER */
 .footer {
     color: #6B7280 !important;
     text-align: center;
@@ -208,6 +210,7 @@ st.markdown("""
 
 </style>
 """, unsafe_allow_html=True)
+
 
 
 # =====================================================
