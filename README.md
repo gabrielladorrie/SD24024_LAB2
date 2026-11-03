@@ -130,10 +130,10 @@ SD24024_LAB2/
 The application is deployed using Streamlit Community Cloud.
 
 **Streamlit Application:**  
-https://sd24024lab2-p2ucmmyeexfp2qz2jrppn2.streamlit.app/
+[https://sd24024lab2-p2ucmmyeexfp2qz2jrppn2.streamlit.app/](https://sd24024lab2-p2ucmmyeexfp2qz2jrppn2.streamlit.app/)
 
 **GitHub Repository:**  
-https://github.com/gabrielladorrie/SD24024_LAB2
+[https://github.com/gabrielladorrie/SD24024_LAB2](https://github.com/gabrielladorrie/SD24024_LAB2)
 
 ## 10. Conclusion
 
