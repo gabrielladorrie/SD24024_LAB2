@@ -1,146 +1,106 @@
-# SD24024_LAB2
+# Question 2: Search Algorithms (Genetic Algorithm)
 
-# Evolution Engine: Genetic Algorithm for Binary Pattern Generation
+## 1. Project Description
 
-## 1. Project Overview
+This project implements a Genetic Algorithm using Python to generate an 80-bit chromosome containing exactly 50 ones.
 
-This project implements a **Genetic Algorithm (GA)** using Python to generate an optimal binary pattern consisting of 80 bits, with exactly 50 ones.
+The objective is to find a bit pattern that achieves the maximum fitness value of 80, based on the predefined fitness function.
 
-A Genetic Algorithm is an optimisation technique inspired by the principles of natural selection and evolution. It works by generating a population of possible solutions and gradually improving them through selection, crossover, and mutation.
+The algorithm is implemented using Python and Streamlit to provide an interactive interface for executing the algorithm and displaying the results.
 
-The application provides an interactive interface developed using Streamlit, allowing users to execute the algorithm and observe its performance through visualisations and fitness evaluations.
+## 2. Problem Requirements
 
-## 2. Problem Statement
-
-The objective of this project is to generate a binary chromosome that contains exactly 50 ones within a chromosome length of 80 bits.
-
-The Genetic Algorithm evaluates each individual using a fitness function. The individual with exactly 50 ones achieves the maximum fitness value of 80.
-
-The algorithm operates with a predefined population size and number of generations to search for an optimal solution.
-
-## 3. Genetic Algorithm Parameters
-
-The following parameters are used in this implementation:
+The Genetic Algorithm is configured according to the following requirements:
 
 | Parameter | Value |
 |---|---:|
 | Population Size | 300 |
 | Chromosome Length | 80 |
 | Target Number of Ones | 50 |
-| Maximum Fitness Value | 80 |
+| Maximum Fitness | 80 |
 | Number of Generations | 50 |
 
-## 4. Fitness Function
+## 3. Fitness Function
 
-The fitness function measures how close an individual's number of ones is to the target value of 50.
+The fitness function is defined as:
 
-The formula is:
-
-**Fitness(x) = 80 - |N₁ - 50|**
+\[
+f(x)=80-|n-50|
+\]
 
 Where:
+- \(n\) is the number of ones in a chromosome.
+- The chromosome consists of 80 binary bits.
+- The maximum fitness value is 80, achieved when \(n=50\).
 
-- N₁ = Total number of ones in the chromosome.
-- 50 = Target number of ones.
-- 80 = Maximum fitness value.
+Therefore, the optimal chromosome contains exactly 50 ones and 30 zeros.
 
-### Examples of Fitness Calculation
+## 4. Genetic Algorithm Methodology
 
-| Number of Ones | Fitness Value |
-|---:|---:|
-| 30 | 60 |
-| 40 | 70 |
-| 45 | 75 |
-| 50 | 80 |
-| 55 | 75 |
-| 60 | 70 |
-| 70 | 60 |
+The following procedures are applied:
 
-The maximum fitness value of 80 is achieved when an individual contains exactly 50 ones.
+1. **Population Initialization:** Generate 300 random chromosomes, each with 80 bits.
+2. **Fitness Evaluation:** Calculate the fitness of each chromosome.
+3. **Selection:** Use tournament selection with a tournament size of 3.
+4. **Crossover:** Apply one-point crossover with a crossover rate of 0.9.
+5. **Mutation:** Apply bit mutation with a mutation rate of 0.01 per bit.
+6. **Elitism:** Preserve the two best individuals in each generation.
+7. **Termination:** Perform 50 generations of evolution.
+8. **Final Evaluation:** Evaluate the final population and identify the best chromosome.
 
-## 5. Genetic Algorithm Process
+## 5. Technologies Used
 
-The algorithm follows these main stages:
+- Python
+- NumPy
+- Pandas
+- Streamlit
 
-### 5.1 Population Initialization
-An initial population of 300 individuals is randomly generated. Each individual is represented as a binary chromosome containing 80 bits.
+## 6. Installation and Execution
 
-### 5.2 Fitness Evaluation
-Each chromosome is evaluated using the fitness function to determine how close its number of ones is to the target of 50.
+### Prerequisites
 
-### 5.3 Selection
-The selection process chooses individuals based on their fitness values. Individuals with better fitness have a higher chance of contributing to the next generation.
+Ensure that Python and pip are installed.
 
-### 5.4 Crossover
-Crossover combines genetic information from selected parent chromosomes to produce new offspring. This introduces new combinations of binary patterns into the population.
+### Step 1: Install Dependencies
 
-### 5.5 Mutation
-Mutation randomly changes selected bits in a chromosome. This maintains population diversity and helps the algorithm explore alternative solutions.
-
-### 5.6 Generation Update
-The new population is evaluated repeatedly across 50 generations. The algorithm tracks the fitness performance to observe improvements during the evolutionary process.
-
-### 5.7 Optimal Solution
-The objective is to identify a chromosome containing exactly 50 ones, achieving the maximum fitness value of 80.
-
-## 6. Application Features
-
-The Streamlit application provides an interactive platform for demonstrating the Genetic Algorithm.
-
-Its main features include:
-
-- **Interactive Interface:** Provides a user-friendly environment for running the Genetic Algorithm.
-- **Parameter Display:** Shows the predefined GA parameters, including population size, chromosome length and number of generations.
-- **Evolution Execution:** Allows users to execute the Genetic Algorithm through an interactive button.
-- **Fitness Evaluation:** Displays the fitness performance of the generated individuals.
-- **Binary Chromosome Visualisation:** Presents the resulting binary pattern for easier interpretation.
-- **Fitness Evolution Graph:** Visualises the improvement of fitness throughout the evolutionary process.
-- **Algorithm Explanation:** Provides explanations of the main Genetic Algorithm operations to help users understand how the solution is generated.
-
-## 7. Technologies Used
-
-The project is developed using the following technologies:
-
-| Technology | Purpose |
-|---|---|
-| Python | Main programming language |
-| Streamlit | Development of the interactive web application |
-| Pandas | Data handling |
-| NetworkX | Graph and network-related functionality |
-| Matplotlib | Data visualisation |
-
-## 8. Project Structure
-
-```text
-SD24024_LAB2/
-│
-├── SD24024_LAB2.py
-│   └── Main Genetic Algorithm application
-│
-├── requirements.txt
-│   └── Required Python libraries
-│
-└── README.md
-    └── Project documentation
+```bash
+pip install streamlit numpy pandas
 ```
 
+### Step 2: Run the Application
 
-## 9. Live Application
+If the Python file is named `app.py`, execute:
 
-The application is deployed using Streamlit Community Cloud.
+```bash
+streamlit run app.py
+```
 
-**Streamlit Application:**  
-[https://sd24024lab2-p2ucmmyeexfp2qz2jrppn2.streamlit.app/](https://sd24024lab2-p2ucmmyeexfp2qz2jrppn2.streamlit.app/)
+### Step 3: Execute the Algorithm
 
-**GitHub Repository:**  
-[https://github.com/gabrielladorrie/SD24024_LAB2](https://github.com/gabrielladorrie/SD24024_LAB2)
+1. Open the application in your browser.
+2. Click **Run Genetic Algorithm**.
+3. View the generated bit pattern and fitness results.
+4. Review the fitness chart and final population.
+5. Download the final population in CSV format if required.
 
-## 10. Conclusion
+## 7. Results
 
-This project implements a Genetic Algorithm to solve a binary pattern optimisation problem.
+The expected optimal solution satisfies the following conditions:
 
-Through population initialization, fitness evaluation, selection, crossover, and mutation, the algorithm searches for an individual with exactly 50 ones in an 80-bit chromosome.
+- Chromosome length: 80 bits
+- Number of ones: 50
+- Number of zeros: 30
+- Fitness value: 80
 
-The Streamlit application further provides an interactive way to understand the evolutionary process through fitness evaluation, chromosome visualisation and graphical representation.
+The application displays the best chromosome, its fitness value, the number of ones and zeros, fitness history, and the final population.
 
-Overall, this project illustrates how Genetic Algorithms can be applied to optimisation problems using artificial intelligence techniques and Python-based software development.
+**Note:** The Genetic Algorithm is stochastic, so the results may vary between executions. The algorithm aims to find a chromosome that achieves the maximum fitness value.
+
+## 8. Project Files
+
+```text
+├── app.py
+├── README.md
+└── requirements.txt
+```
+
