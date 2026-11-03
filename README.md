@@ -124,37 +124,8 @@ SD24024_LAB2/
     └── Project documentation
 ```
 
-## 9. Installation and Execution
 
-Follow these steps to run the application locally.
-
-### Step 1: Clone the Repository
-
-```bash
-git clone https://github.com/gabrielladorrie/SD24024_LAB2.git
-```
-
-### Step 2: Navigate to the Project Directory
-
-```bash
-cd SD24024_LAB2
-```
-
-### Step 3: Install the Required Libraries
-
-```bash
-pip install -r requirements.txt
-```
-
-### Step 4: Run the Streamlit Application
-
-```bash
-streamlit run SD24024_LAB2.py
-```
-
-The application will open in your default web browser.
-
-## 10. Live Application
+## 9. Live Application
 
 The application is deployed using Streamlit Community Cloud.
 
@@ -164,11 +135,11 @@ https://sd24024lab2-p2ucmmyeexfp2qz2jrppn2.streamlit.app/
 **GitHub Repository:**  
 https://github.com/gabrielladorrie/SD24024_LAB2
 
-## 11. Conclusion
+## 10. Conclusion
 
-This project demonstrates the implementation of a Genetic Algorithm to solve a binary pattern optimisation problem.
+This project implements a Genetic Algorithm to solve a binary pattern optimisation problem.
 
-Through population initialization, fitness evaluation, selection, crossover and mutation, the algorithm searches for an individual containing exactly 50 ones within an 80-bit chromosome.
+Through population initialization, fitness evaluation, selection, crossover, and mutation, the algorithm searches for an individual with exactly 50 ones in an 80-bit chromosome.
 
 The Streamlit application further provides an interactive way to understand the evolutionary process through fitness evaluation, chromosome visualisation and graphical representation.
 
