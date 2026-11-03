@@ -13,80 +13,119 @@ st.set_page_config(
     layout="wide"
 )
 
+
 # =====================================================
-# CUSTOM CSS DESIGN
+# CUSTOM CSS DESIGN - VISIBILITY FIX
 # =====================================================
 
 st.markdown("""
 <style>
 
+/* Main application background */
 .stApp {
-    background-color: #F4F5FA;
+    background-color: #F4F5FA !important;
+    color: #1F2937 !important;
 }
 
+/* Main content text */
+.stApp p,
+.stApp li,
+.stApp label,
+.stApp span,
+.stApp strong {
+    color: #1F2937;
+}
+
+/* All headings */
+.stApp h1,
+.stApp h2,
+.stApp h3,
+.stApp h4,
+.stApp h5,
+.stApp h6 {
+    color: #252B45 !important;
+}
+
+/* Main layout */
 .block-container {
     padding-top: 2rem;
     padding-bottom: 3rem;
 }
 
+/* Hero banner */
 .hero {
     background: linear-gradient(120deg, #111827, #312E81);
     padding: 35px;
     border-radius: 18px;
-    color: white;
+    color: white !important;
     margin-bottom: 25px;
 }
 
 .hero h1 {
-    color: white;
+    color: #FFFFFF !important;
     font-size: 38px;
     margin-bottom: 8px;
 }
 
 .hero p {
-    color: #C7D2FE;
+    color: #C7D2FE !important;
     font-size: 16px;
 }
 
+/* Information cards */
 .section-card {
-    background: white;
+    background: #FFFFFF !important;
     padding: 22px;
     border-radius: 14px;
     border: 1px solid #E5E7EB;
     margin-bottom: 15px;
+    color: #1F2937 !important;
 }
 
+.section-card p,
+.section-card strong {
+    color: #1F2937 !important;
+}
+
+/* Metric cards */
 .metric-card {
-    background: white;
+    background: #FFFFFF !important;
     padding: 20px;
     border-radius: 14px;
     border-left: 5px solid #6366F1;
 }
 
 .metric-label {
-    color: #6B7280;
+    color: #6B7280 !important;
     font-size: 13px;
 }
 
 .metric-value {
-    color: #312E81;
+    color: #312E81 !important;
     font-size: 29px;
     font-weight: 700;
 }
 
+/* Explanation boxes */
 .explanation {
-    background: #EEF2FF;
+    background: #EEF2FF !important;
     padding: 17px;
     border-radius: 12px;
     border-left: 4px solid #6366F1;
-    color: #312E81;
+    color: #312E81 !important;
     margin: 12px 0;
 }
 
+.explanation p,
+.explanation strong {
+    color: #312E81 !important;
+}
+
+/* Binary chromosome visualization */
 .bit-one {
     display: inline-block;
     background: #6366F1;
-    color: white;
+    color: white !important;
     padding: 5px 7px;
     margin: 2px;
     border-radius: 5px;
@@ -96,16 +135,42 @@ st.markdown("""
 .bit-zero {
     display: inline-block;
     background: #E5E7EB;
-    color: #374151;
+    color: #374151 !important;
     padding: 5px 7px;
     margin: 2px;
     border-radius: 5px;
     font-family: monospace;
 }
 
+/* Tables */
+.stApp table,
+.stApp th,
+.stApp td {
+    color: #1F2937 !important;
+}
+
+/* Mathematical formula */
+.stApp [data-testid="stLatex"] {
+    color: #312E81 !important;
+}
+
+/* Sidebar */
+[data-testid="stSidebar"] {
+    background-color: #252630 !important;
+}
+
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3,
+[data-testid="stSidebar"] label {
+    color: #FFFFFF !important;
+}
+
+/* Buttons */
 .stButton > button {
-    background: #4F46E5;
-    color: white;
+    background: #4F46E5 !important;
+    color: #FFFFFF !important;
     border-radius: 9px;
     border: none;
     padding: 10px 22px;
@@ -113,8 +178,32 @@ st.markdown("""
 }
 
 .stButton > button:hover {
-    background: #3730A3;
-    color: white;
+    background: #3730A3 !important;
+    color: #FFFFFF !important;
+}
+
+/* Expanders */
+[data-testid="stExpander"] {
+    background: #FFFFFF !important;
+    border: 1px solid #E5E7EB;
+    border-radius: 10px;
+}
+
+[data-testid="stExpander"] summary,
+[data-testid="stExpander"] summary p {
+    color: #252B45 !important;
+}
+
+/* Dataframe and metric text */
+[data-testid="stMetricLabel"],
+[data-testid="stMetricValue"] {
+    color: #252B45 !important;
+}
+
+/* Footer */
+.footer {
+    color: #6B7280 !important;
+    text-align: center;
 }
 
 </style>
