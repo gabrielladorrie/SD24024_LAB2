@@ -99,7 +99,7 @@ The application displays the best chromosome, its fitness value, the number of o
 ## 8. Project Files
 
 ```text
-├── app.py
+├── SD24024_LAB2.py
 ├── README.md
 └── requirements.txt
 ```
